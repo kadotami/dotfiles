@@ -1,0 +1,8 @@
+iterm設定用ファイル
+.tmuxショートカット(send hex)
+
+comd % -> 0x2 0x25 (縦分割)
+comd ' -> 0x2 0x22 (横分割)
+comd ] -> 0x2 0x6f (パネル移動)
+comd shift n -> 0x2 0x63 (あたらいいウィンドウ)
+comd shift ] -> 0x2 0x6e (ウィンドウ移動)
