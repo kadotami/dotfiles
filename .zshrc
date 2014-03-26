@@ -94,6 +94,8 @@ PROMPT+="%(?.%F{green}$OK%f.%F{red}$NG%f) "
 
 RPROMPT=""
 
+setopt prompt_subst
+
 ### Ls Color ###
 # 色の設定
 export LSCOLORS=Exfxcxdxbxegedabagacad
@@ -182,14 +184,11 @@ function prompt-git-current-branch {
                 color=red
         fi
 
-        # %{...%} は囲まれた文字列がエスケープシーケンスであることを明示する
-        # これをしないと右プロンプトの位置がずれる
         echo "%F{$color}$name%f"
 }
 
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
-setopt prompt_subst
-PROMPT+="%F{green}[%~ `prompt-git-current-branch`%F{green}]%f"
+PROMPT+='%F{green}[%~ `prompt-git-current-branch`%F{green}]%f'
 PROMPT+="
 "
 PROMPT+="%% "
+
