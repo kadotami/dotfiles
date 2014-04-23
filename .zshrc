@@ -1,6 +1,11 @@
 # ------------------------------
 # set PATH
 # ------------------------------
+#tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+#python
+export PATH=/usr/local/bin:/usr/local/share/python:$PATH
 
 # scala
 export PATH="$HOME/Documents/PL/scala/bin:$PATH"
@@ -191,4 +196,4 @@ PROMPT+='%F{green}[%~ `prompt-git-current-branch`%F{green}]%f'
 PROMPT+="
 "
 PROMPT+="%% "
-
+ 
