@@ -1,11 +1,33 @@
 # ------------------------------
 # set PATH
 # ------------------------------
+
+# dreambredge facebook ids
+export DB_FACEBOOK_APP_ID=1706329032949387
+export DB_FACEBOOK_SECRET=dcbdf4dad7b09408716fac39bfc0914c
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# go
+export GOPATH=~/Documents/go
+
 #tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+#pyenv
+export PATH="$HOME/.pyenv/shims:$PATH"
+
 #python
 export PATH=/usr/local/bin:/usr/local/share/python:$PATH
+export SLACK_API_TOKEN=xoxp-4436077663-4414064360-11880894870-721aa12163
+#latex
+export PATH=/usr/texbin:$PATH
+
+export PATH=/usr/bin/gawk:$PATH
+
+# php
+export PATH=/usr/local/php5/bin:$PATH
 
 # scala
 export PATH="$HOME/Documents/PL/scala/bin:$PATH"
@@ -197,3 +219,4 @@ PROMPT+="
 "
 PROMPT+="%% "
  
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
