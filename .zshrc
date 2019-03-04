@@ -2,6 +2,12 @@
 # set PATH
 # ------------------------------
 
+setopt nonomatch
+
+# tmux
+export EDITOR='vim'
+export SHELL='zsh'
+
 # dreambredge facebook ids
 export DB_FACEBOOK_APP_ID=1706329032949387
 export DB_FACEBOOK_SECRET=dcbdf4dad7b09408716fac39bfc0914c
@@ -25,8 +31,8 @@ export PATH=/usr/texbin:$PATH
 
 export PATH=/usr/bin/gawk:$PATH
 
-# php
-export PATH=/usr/local/php5/bin:$PATH
+#php
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 
 # scala
 export PATH="$HOME/Documents/PL/scala/bin:$PATH"
@@ -52,6 +58,16 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # nginx
 export PATH=$PATH:/usr/local/sbin
+
+# openssl
+export PATH=/usr/local/opt/openssl/bin:$PATH
+
+# android
+export PATH=$PATH:/Users/usr0102200/Library/Android/sdk/platform-tools
+
+#Oracle
+export DYLD_LIBRARY_PATH=/Users/usr0102200/Library/Oracle/instantclient_12_1
+export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 # ------------------------------
 # General Settings
@@ -219,3 +235,4 @@ PROMPT+="
 PROMPT+="%% "
  
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source ~/.tmuxinator/tmuxinator.zsh
