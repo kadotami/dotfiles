@@ -2,9 +2,12 @@
 # set PATH
 # ------------------------------
 
-# dreambredge facebook ids
-export DB_FACEBOOK_APP_ID=1706329032949387
-export DB_FACEBOOK_SECRET=dcbdf4dad7b09408716fac39bfc0914c
+
+#mecab
+PATH="/opt/local/bin:$PATH"
+
+#flutter
+export PATH="$PATH:/usr/local/share/flutter/bin"
 
 # go
 export GOPATH=~/.go
@@ -12,21 +15,15 @@ export GOPATH=~/.go
 #tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 #python
-export PATH=/usr/local/bin:/usr/local/share/python:$PATH
+# export PATH=/usr/local/bin:/usr/local/share/python:$PATH
 
 #latex
 export PATH=/usr/texbin:$PATH
-
 export PATH=/usr/bin/gawk:$PATH
 
 # php
-export PATH=/usr/local/php5/bin:$PATH
+#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
 # scala
 export PATH="$HOME/Documents/PL/scala/bin:$PATH"
@@ -38,7 +35,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH" 
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init - zsh)"
 
 # java
@@ -52,6 +49,18 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # nginx
 export PATH=$PATH:/usr/local/sbin
+
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# react native android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # ------------------------------
 # General Settings
@@ -218,4 +227,23 @@ PROMPT+="
 "
 PROMPT+="%% "
  
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval $(/usr/libexec/path_helper -s)
+eval export PATH="/Users/mondamin/.pyenv/shims:${PATH}"
+export PYENV_SHELL=zsh
+source '/Users/mondamin/.pyenv/libexec/../completions/pyenv.zsh'
+command pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(pyenv "sh-$command" "$@")";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
