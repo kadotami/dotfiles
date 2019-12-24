@@ -34,10 +34,6 @@ export PATH="$HOME/bin:$PATH"
 # cabal
 export PATH="$HOME/.cabal/bin:$PATH" 
 
-# rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init - zsh)"
-
 # java
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
@@ -54,6 +50,10 @@ export PATH=$PATH:/usr/local/sbin
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# rbenv
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init - zsh)"
 
 # react native android
 export ANDROID_HOME=$HOME/Library/Android/sdk
