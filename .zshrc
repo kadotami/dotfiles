@@ -2,12 +2,24 @@
 # set PATH
 # ------------------------------
 
+<<<<<<< HEAD
 
 #mecab
 PATH="/opt/local/bin:$PATH"
 
 #flutter
 export PATH="$PATH:/usr/local/share/flutter/bin"
+=======
+setopt nonomatch
+
+# tmux
+export EDITOR='vim'
+export SHELL='zsh'
+
+# dreambredge facebook ids
+export DB_FACEBOOK_APP_ID=1706329032949387
+export DB_FACEBOOK_SECRET=dcbdf4dad7b09408716fac39bfc0914c
+>>>>>>> 5c76ef56c1623f8e03b839c7fa9e013c3138e6c9
 
 # go
 export GOPATH=~/.go
@@ -61,6 +73,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
 
 # ------------------------------
 # General Settings
